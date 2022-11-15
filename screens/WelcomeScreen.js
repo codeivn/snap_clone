@@ -6,39 +6,25 @@ import Logo from '../assets/profile.png';
 
 
 function WelcomeScreen({ navigation }) {
-
-  const onPress = () => Alert.alert(
-    "Alert Title",
-    "My Alert Msg",
-    [
-      {
-        text: "Cancel",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel"
-      },
-      { text: "OK", onPress: () => LoginScreen }
-    ]
-  );
-
+  
   const pressHandler = () => {
     navigation.navigate("LoginScreen"); // Nájde obrazovku a prepne
-navigation.goBack();
+    navigation.goBack();
 }
 
   return (
     <View style={styles.container}>
-        <Image
-            style={styles.imageLogo}
-            source={Logo}
-        />
-        
-        <View style={styles.containerLogIn}>
-            <TouchableOpacity onPress={pressHandler}>
-            <Text style={styles.textSetup}>LOG IN</Text>
-            </TouchableOpacity>
+      <Image
+        style={styles.imageLogo}
+        source={Logo}
+      />
+      <View style={styles.containerLogIn}>
+        <TouchableOpacity onPress={pressHandler}>
+          <Text style={styles.textSetup}>LOG IN</Text>
+        </TouchableOpacity>
         </View>
         <View style={styles.containerSignUp}>
-            <Text style={styles.textSetup}>SIGN UP</Text>
+          <Text style={styles.textSetup}>SIGN UP</Text>
         </View>
     </View>
   )
