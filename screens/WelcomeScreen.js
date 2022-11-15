@@ -2,6 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
 import LoginScreen from './LoginScreen';
 
+import Logo from '../assets/profile.png';
+
 
 function WelcomeScreen({ navigation }) {
 
@@ -27,7 +29,7 @@ navigation.goBack();
     <View style={styles.container}>
         <Image
             style={styles.imageLogo}
-            source={require('C:/Users/ivanp/react-native/snapchat_clone/snapchat/profile.png')}
+            source={Logo}
         />
         
         <View style={styles.containerLogIn}>
