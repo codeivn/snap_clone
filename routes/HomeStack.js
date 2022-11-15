@@ -4,6 +4,7 @@ import { createAppContainer } from 'react-navigation';
 
 import WelcomeScreen from '../screens/WelcomeScreen';
 import LoginScreen from '../screens/LoginScreen';
+import ChatScreen from '../screens/ChatScreen';
 
 
 
@@ -20,7 +21,10 @@ const screens = {
         navigationOptions: {
             title: ''
         }
-    }
+    },
+    ChatScreen: {
+        screen: ChatScreen,
+    },
 }
 
 const HomeStack = createStackNavigator(screens);

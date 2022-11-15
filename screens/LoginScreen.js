@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 
-import { Ionicons } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons';
+
+import ChatScreen from './ChatScreen';
 
 
 function LoginScreen({ navigation }) {
 
-  const LoginFunction = () => {
-    Alert.alert("Boli ste prihlásený");
+  const [inputName, setInputName] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+
+  const userName = 'admin';
+  const userPassword = '123';
+  
+
+  const UserLogin = () => {
+  
+    if (inputName == userName && inputPassword == userPassword) {
+      navigation.navigate("ChatScreen");
+    }
+    else {
+      Alert.alert('User do not exist');
+    }
   }
+
 
   return (
     <View style={styles.container}>
@@ -16,27 +32,36 @@ function LoginScreen({ navigation }) {
         <Text style={styles.textHeader}>Log In</Text>
       </View>
       <Text style={styles.textUserName}>USERNAME OR EMAIL</Text>
-      <TextInput style={styles.input} />
+      <TextInput 
+        onChangeText={(value => setInputName(value))}
+        value={inputName} 
+        style={styles.input} 
+      />
       <Text style={styles.textUserName}>PASSWORD</Text>
-      <TextInput style={styles.input} />
+      <TextInput
+        onChangeText={(value => setInputPassword(value))}
+        value={inputPassword}  
+        style={styles.input}
+       />
       <View style={styles.containerSaveLogin}>
-        <Ionicons name="md-cloud-done-outline" size={25} color="black" />
+        <Ionicons name="md-cloud-done-outline" 
+          size={25} 
+          color="black" />
         <Text style={styles.textSave}>Save login Info on your iCloud devices</Text>
       </View>
       <Text style={styles.textForgot}>Forgot your password??</Text>
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.buttonLogin}
-        onPress={LoginFunction}
-        >
+        onPress={UserLogin}
+      >
         <Text>Log In</Text>
       </TouchableOpacity>
     </View>
   )
 }
 
-export const styles = StyleSheet.create({
+export const styles = StyleSheet.create ({
 
-  
     containerHeader: {
       alignItems: 'center',
       paddingTop: 25,
@@ -55,6 +80,7 @@ export const styles = StyleSheet.create({
       width: '75%',
       paddingTop: 25,
       marginLeft: 50,
+      fontSize: 15,
     },
     containerSaveLogin: {
       flexDirection: 'row',
