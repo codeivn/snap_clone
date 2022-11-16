@@ -24,6 +24,9 @@ const screens = {
     },
     ChatScreen: {
         screen: ChatScreen,
+        navigationOptions: {
+            headerShown: false,
+        }
     },
 }
 
