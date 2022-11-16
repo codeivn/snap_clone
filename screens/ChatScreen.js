@@ -13,7 +13,7 @@ function ChatScreen() {
      const [chat, setChat] = useState([
         { name: 'Telegram', date: 'Today', uri: {Profile}, key: '1' },
         { name: 'Ivan', date: 'Sun', uri: {Profile}, key: '2'},
-        { name: 'React', date: '23.10', uri: {Profile}, key: '3'}, 
+        { name: 'React', date: '23.10', uri: require('../assets/profile.png'), key: '3'}, 
     ]) 
 
     const MessageTap = () => {
