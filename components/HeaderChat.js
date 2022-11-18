@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 
-import Profile from '../assets/profile.png'
+import Profile from '../assets/avatar.png'
 
 function HeaderChat() {
   return (
@@ -17,7 +17,7 @@ function HeaderChat() {
         <FontAwesome 
             name="search" 
             size={25} 
-            color="black" 
+            color="#7c7e8b" 
             style={styles.iconBasic}
         />
         </View>
@@ -26,13 +26,13 @@ function HeaderChat() {
         <FontAwesome 
             name="user-plus" 
             size={25} 
-            color="black" 
+            color="#7c7e8b" 
             style={styles.iconBasic}
         />
         <FontAwesome 
             name="search" 
             size={25} 
-            color="black" 
+            color="#7c7e8b" 
             style={styles.iconBasic}
         />
         </View>
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     
     container: {
         height: 80,
-        backgroundColor: 'grey',
+       // backgroundColor: 'grey',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -65,7 +65,7 @@ export const styles = StyleSheet.create({
     },
     textHeader: {
         fontSize: 25,
-        fontWeight: '600',
+        fontWeight: '700',
         marginTop: 10,
     },
     secondItems: {
